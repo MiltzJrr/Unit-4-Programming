@@ -1,0 +1,15 @@
+Private Sub rdoIndP_CheckedChanged(sender As Object, e As EventArgs) Handles rdoIndP.CheckedChanged
+        If rdoIndP.Checked = True Then
+            txtPlayer1.Visible = False
+            txtPlayer2.Visible = False
+            txtPlayer3.Visible = False
+            txtPlayer4.Visible = False
+            txtPlayer5.Visible = False
+        Else
+            txtPlayer1.Visible = True
+            txtPlayer2.Visible = True
+            txtPlayer3.Visible = True
+            txtPlayer4.Visible = True
+            txtPlayer5.Visible = True
+        End If
+    End Sub

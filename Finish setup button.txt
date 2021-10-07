@@ -1,0 +1,10 @@
+        'Checks if correct number of events and participants have been added
+
+        If TEventCount <> 5 Or IEventCount <> 5 Or indCount <> 20 Or teamCount <> 4 Then
+            MsgBox("Please ensure you have entered 5 individual events, 5 team events, 20 individual participants and 4 teams before clicking Finish Event Setup")
+        Else
+            frmMain.btnSetup.Enabled = False
+            frmMain.btnEnterRankings.Enabled = True
+            Me.Close()
+            frmMain.Show()
+        End If

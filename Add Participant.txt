@@ -1,0 +1,43 @@
+ If txtParticipantName.Text <> "" Then
+
+            If rdoIndP.Checked = True Then
+                If indCount < 20 Then
+                    ind(indCount).iName = txtParticipantName.Text
+                    indCount += 1
+                    lblNoInds.Text = indCount
+                    lstParticipants.Items.Add(txtParticipantName.Text & " Ind")
+                    ind(indCount).iResult = {0, 0, 0, 0, 0}
+                Else
+                    MsgBox("Maximum number of individual players reached.")
+                End If
+            End If
+
+
+                If rdoTeamP.Checked = True Then
+                    If txtPlayer1.Text = "" Or txtPlayer1.Text = "" Or txtPlayer3.Text = "" Or txtPlayer1.Text = "" Or txtPlayer5.Text = "" Then
+                        MsgBox("Please enter 5 player names")
+                Else
+                    If teamCount < 4 Then
+                        team(teamCount).TName = txtParticipantName.Text
+                        team(teamCount).TPlayerName = {txtPlayer1.Text, txtPlayer2.Text, txtPlayer3.Text, txtPlayer4.Text, txtPlayer5.Text}
+                        teamCount += 1
+                        lblNoTeams.Text = teamCount
+                        lstParticipants.Items.Add(txtParticipantName.Text & " Team")
+                        team(teamCount).TResult = {0, 0, 0, 0, 0}
+
+                    Else
+                        MsgBox("Maximum number of teams reached.")
+                    End If
+
+                End If
+            End If
+            Else
+                MsgBox("Please enter name")
+            End If
+        txtParticipantName.Text = ""
+        'Clear textboxes for player names
+        txtPlayer1.Text = ""
+        txtPlayer2.Text = ""
+        txtPlayer3.Text = ""
+        txtPlayer4.Text = ""
+        txtPlayer5.Text = ""

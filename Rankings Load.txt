@@ -1,0 +1,74 @@
+ Private Sub frmRankings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim playLabels As New List(Of Control)() From { _
+                lbli1, _
+                lbli2, _
+                lbli3, _
+                lbli4, _
+                lbli5, _
+                lbli6, _
+                lbli7, _
+                lbli8, _
+                lbli9, _
+                lbli10, _
+                lbli11, _
+                lbli12, _
+                lbli13, _
+                lbli14, _
+                lbli15, _
+                lbli16, _
+                lbli17, _
+                lbli18, _
+                lbli19, _
+                lbli20}
+
+
+        Dim textBoxes As New List(Of Control)() From { _
+        txti1, _
+        txti2, _
+        txti3, _
+        txti4, _
+        txti5, _
+        txti6, _
+        txti7, _
+        txti8, _
+        txti9, _
+        txti10, _
+        txti11, _
+        txti12, _
+        txti13, _
+        txti14, _
+        txti15, _
+        txti16, _
+        txti17, _
+        txti18, _
+        txti19, _
+        txti20}
+
+
+
+
+        ' populate labels with names of individual participants
+
+        For i As Integer = 0 To playLabels.Count - 1
+            playLabels(i).Text = ind(i).iName
+        Next i
+
+
+        ' populate individual events combobox
+        For i = 0 To 4
+            cboiEvents.Items.Add(IEvent(i).EName)
+        Next i
+
+        'populates labels with team names
+        lblt1.Text = team(0).TName
+        lblt2.Text = team(1).TName
+        lblt3.Text = team(2).TName
+        lblt4.Text = team(3).TName
+
+        'populate team events combobox
+        For i = 0 To 4
+            cbotevents.Items.Add(TEvent(i).EName)
+        Next i
+
+    End Sub

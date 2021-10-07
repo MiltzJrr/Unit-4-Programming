@@ -1,0 +1,25 @@
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        ListBox2.Items.Clear()
+        Select Case ComboBox2.SelectedIndex
+            Case 0
+                For i = 0 To 3
+                    ListBox2.Items.Add(Format(team(i).TResult(0), "00") & " " & team(i).TName)
+                Next i
+            Case 1
+                For i = 0 To 3
+                    ListBox2.Items.Add(Format(team(i).TResult(1), "00") & " " & team(i).TName)
+                Next i
+            Case 2
+                For i = 0 To 3
+                    ListBox2.Items.Add(Format(team(i).TResult(2), "00") & " " & team(i).TName)
+                Next i
+            Case 3
+                For i = 0 To 3
+                    ListBox2.Items.Add(Format(team(i).TResult(3), "00") & " " & team(i).TName)
+                Next i
+            Case 4
+                For i = 0 To 3
+                    ListBox2.Items.Add(Format(team(i).TResult(4), "00") & " " & team(i).TName)
+                Next i
+        End Select
+    End Sub

@@ -1,0 +1,34 @@
+    Private Sub frmAnalysis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim i As Byte
+        ' populate combo box with individual events
+        For i = 0 To 4
+            ComboBox1.Items.Add(IEvent(i).EName)
+        Next i
+
+
+        Dim j As Byte
+        ' populate combo box with team events
+        For j = 0 To 4
+            ComboBox2.Items.Add(TEvent(j).EName)
+        Next j
+
+        'populate individual overall results
+        ListBox3.Items.Clear()
+
+        For i = 0 To 19
+            Dim tempiresult As Integer
+            tempiresult = ind(i).iResult(0) + ind(i).iResult(1) + ind(i).iResult(2) + ind(i).iResult(3) + ind(i).iResult(4)
+            ListBox3.Items.Add(Format(tempiresult, "00") & " " & ind(i).iName)
+        Next i
+
+        'populate team overall results
+        ListBox4.Items.Clear()
+
+        For i = 0 To 3
+            Dim temptresult As Integer
+            temptresult = team(i).TResult(0) + team(i).TResult(1) + team(i).TResult(2) + team(i).TResult(3) + team(i).TResult(4)
+            ListBox4.Items.Add(Format(temptresult, "00") & " " & team(i).TName)
+        Next i
+
+    End Sub

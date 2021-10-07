@@ -1,0 +1,25 @@
+Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        ListBox1.Items.Clear()
+        Select Case ComboBox1.SelectedIndex
+            Case 0
+                For i = 0 To 19
+                    ListBox1.Items.Add(Format(ind(i).iResult(0), "00") & " " & ind(i).iName)
+                Next i
+            Case 1
+                For i = 0 To 19
+                    ListBox1.Items.Add(Format(ind(i).iResult(1), "00") & " " & ind(i).iName)
+                Next i
+            Case 2
+                For i = 0 To 19
+                    ListBox1.Items.Add(Format(ind(i).iResult(2), "00") & " " & ind(i).iName)
+                Next i
+            Case 3
+                For i = 0 To 19
+                    ListBox1.Items.Add(Format(ind(i).iResult(3), "00") & " " & ind(i).iName)
+                Next i
+            Case 4
+                For i = 0 To 19
+                    ListBox1.Items.Add(Format(ind(i).iResult(4), "00") & " " & ind(i).iName)
+                Next i
+        End Select
+    End Sub

@@ -1,0 +1,43 @@
+        Dim i As Byte
+
+        'populate team events
+
+        TEvent(0).EName = "Dancing"
+        TEvent(1).EName = "Acrobatics"
+        TEvent(2).EName = "Bridge"
+        TEvent(3).EName = "Scrabble"
+        TEvent(4).EName = "Volleyball"
+        'populate individual events
+        IEvent(0).EName = "Solo Dancing"
+        IEvent(1).EName = "Solo Acrobatics"
+        IEvent(2).EName = "Tiddlywinks"
+        IEvent(3).EName = "Space invaders"
+        IEvent(4).EName = "Spelling"
+
+        TEventCount = 5
+        IEventCount = 5
+        indCount = 20
+        teamCount = 4
+
+        'populate individuals
+        For i = 0 To 19
+            ind(i).iName = "Player" & i + 1
+            ind(i).iEvent = {IEvent(0).EName, IEvent(1).EName, IEvent(2).EName, IEvent(3).EName, IEvent(4).EName}
+            ind(i).iResult = {0, 0, 0, 0, 0}
+        Next i
+
+        'populate teams
+        For i = 0 To 3
+            team(i).TName = "Team " & Chr(65 + i)
+            team(i).TPlayerName = {"Team " & Chr(65 + i) & " - Player1", _
+                                   "Team " & Chr(65 + i) & " - Player2", _
+                                   "Team " & Chr(65 + i) & " - Player3", _
+                                   "Team " & Chr(65 + i) & " - Player4", _
+                                   "Team " & Chr(65 + i) & " - Player5"}
+            team(i).TEvent = {TEvent(0).EName, TEvent(1).EName, TEvent(2).EName, TEvent(3).EName, TEvent(4).EName}
+            team(i).TResult = {0, 0, 0, 0, 0}
+        Next i
+        btnSetup.Enabled = False
+        btnEnterRankings.Enabled = True
+        btnResults.Enabled = False
+        btnLoad.Enabled = False

@@ -1,0 +1,30 @@
+        If optInd.Checked = True Then
+            'Checks if there is room for another event
+            If IEventCount < 5 Then
+                IEvent(IEventCount).EName = txtEventName.Text
+                IEvent(IEventCount).EDesc = txtEventDesc.Text
+                IEventCount += 1
+                lblIndEvents.Text = IEventCount
+                lstEventsSoFar.Items.Add(txtEventName.Text & " Ind")
+
+            Else
+                MsgBox("Maximum number of individual events reached.")
+            End If
+        End If
+
+        If optTeam.Checked = True Then
+            If TEventCount < 5 Then
+                TEvent(TEventCount).EName = txtEventName.Text
+                TEvent(TEventCount).EDesc = txtEventDesc.Text
+                TEventCount += 1
+                lblTeamEvents.Text = TEventCount
+                lstEventsSoFar.Items.Add(txtEventName.Text & " Team")
+
+            Else
+                MsgBox("Maximum number of team events reached.")
+            End If
+        End If
+
+
+        txtEventName.Text = ""
+        txtEventDesc.Text = ""

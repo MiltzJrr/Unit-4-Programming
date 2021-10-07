@@ -1,0 +1,99 @@
+        Dim playLabels As New List(Of Control)() From { _
+        lbli1, _
+        lbli2, _
+        lbli3, _
+        lbli4, _
+        lbli5, _
+        lbli6, _
+        lbli7, _
+        lbli8, _
+        lbli9, _
+        lbli10, _
+        lbli11, _
+        lbli12, _
+        lbli13, _
+        lbli14, _
+        lbli15, _
+        lbli16, _
+        lbli17, _
+        lbli18, _
+        lbli19, _
+        lbli20}
+
+
+        Dim textBoxes As New List(Of Control)() From { _
+        txti1, _
+        txti2, _
+        txti3, _
+        txti4, _
+        txti5, _
+        txti6, _
+        txti7, _
+        txti8, _
+        txti9, _
+        txti10, _
+        txti11, _
+        txti12, _
+        txti13, _
+        txti14, _
+        txti15, _
+        txti16, _
+        txti17, _
+        txti18, _
+        txti19, _
+        txti20}
+
+        Dim i As Integer
+        Dim xInvalid As Boolean
+        Dim test As Integer
+
+
+        i = 0
+        xInvalid = False
+        While i < textBoxes.Count And xInvalid = False
+
+            test = CInt(textBoxes(i).Text)
+            If test < 1 Or test > 20 Then
+                MsgBox("I am so disappointed!! " & _
+                       "You should have entered " & _
+                       "a number between 1 and 20. " & _
+                       playLabels(i).Text & " is invalid", _
+                       MsgBoxStyle.Critical, "Marky Error!!")
+                xInvalid = True
+
+            End If
+            i += 1
+        End While
+
+        
+
+
+        If xInvalid = False Then
+            Select Case cboiEvents.SelectedIndex
+                Case 0
+                    For i = 0 To textBoxes.Count - 1
+                        ind(i).iResult(0) = CInt(textBoxes(i).Text)
+                    Next
+                Case 1
+                    For i = 0 To textBoxes.Count - 1
+                        ind(i).iResult(1) = CInt(textBoxes(i).Text)
+                    Next
+                Case 2
+                    For i = 0 To textBoxes.Count - 1
+                        ind(i).iResult(2) = CInt(textBoxes(i).Text)
+                    Next
+                Case 3
+                    For i = 0 To textBoxes.Count - 1
+                        ind(i).iResult(3) = CInt(textBoxes(i).Text)
+                    Next
+                Case 4
+                    For i = 0 To textBoxes.Count - 1
+                        ind(i).iResult(4) = CInt(textBoxes(i).Text)
+                    Next
+            End Select
+        End If
+
+
+        For i = 0 To textBoxes.Count - 1
+            textBoxes(i).Text = ""
+        Next

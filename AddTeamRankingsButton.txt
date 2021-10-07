@@ -1,0 +1,65 @@
+ Dim playLabels As New List(Of Control)() From { _
+       lblt1, _
+       lblt2, _
+       lblt3, _
+       lblt4}
+
+
+        Dim textBoxes As New List(Of Control)() From { _
+        txtt1, _
+        txtt2, _
+        txtt3, _
+        txtt4}
+
+        Dim i As Integer
+        Dim xInvalid As Boolean
+        Dim test As Integer
+
+        i = 0
+        xInvalid = False
+        While i < textBoxes.Count And xInvalid = False
+
+            test = CInt(textBoxes(i).Text)
+            If test < 1 Or test > 4 Then
+                MsgBox("I am so disappointed!! " & _
+                       "You should have entered " & _
+                       "a number between 1 and 4. " & _
+                       playLabels(i).Text & " is invalid", _
+                       MsgBoxStyle.Critical, "Marky Error!!")
+                xInvalid = True
+
+            End If
+            i += 1
+        End While
+
+
+
+
+        If xInvalid = False Then
+            Select Case cbotevents.SelectedIndex
+                Case 0
+                    For i = 0 To textBoxes.Count - 1
+                        team(i).TResult(0) = CInt(textBoxes(i).Text)
+                    Next
+                Case 1
+                    For i = 0 To textBoxes.Count - 1
+                        team(i).TResult(1) = CInt(textBoxes(i).Text)
+                    Next
+                Case 2
+                    For i = 0 To textBoxes.Count - 1
+                        team(i).TResult(2) = CInt(textBoxes(i).Text)
+                    Next
+                Case 3
+                    For i = 0 To textBoxes.Count - 1
+                        team(i).TResult(3) = CInt(textBoxes(i).Text)
+                    Next
+                Case 4
+                    For i = 0 To textBoxes.Count - 1
+                        team(i).TResult(4) = CInt(textBoxes(i).Text)
+                    Next
+            End Select
+        End If
+
+        For i = 0 To textBoxes.Count - 1
+            textBoxes(i).Text = ""
+        Next

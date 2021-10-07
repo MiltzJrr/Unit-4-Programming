@@ -1,0 +1,25 @@
+        Dim xResults() As String = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        Dim xTemp As String
+        Dim i, swaps As Integer
+
+        For i = 0 To ListBox1.Items.Count - 1
+            xResults(i) = ListBox1.Items.Item(i)
+        Next
+        swaps = 1
+        While swaps > 0
+            swaps = 0
+            For i = 0 To xResults.Count - 2
+                If xResults(i) < xResults(i + 1) Then
+                    xTemp = xResults(i)
+                    xResults(i) = xResults(i + 1)
+                    xResults(i + 1) = xTemp
+                    swaps += 1
+                End If
+            Next
+
+        End While
+
+        ListBox1.Items.Clear()
+        For i = 0 To xResults.Count - 1
+            ListBox1.Items.Add(xResults(i))
+        Next

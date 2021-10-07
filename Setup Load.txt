@@ -1,0 +1,39 @@
+    Private Sub frmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Displays count of events as label on form
+        lblIndEvents.Text = IEventCount
+        lblTeamEvents.Text = TEventCount
+        lblNoInds.Text = indCount
+        lblNoTeams.Text = teamCount
+        'Clears name and description text boxes ready for event to be added
+        txtEventName.Text = ""
+        txtEventDesc.Text = ""
+        txtParticipantName.Text = ""
+        'Clears listbox
+        lstEventsSoFar.Items.Clear()
+        lstParticipants.Items.Clear()
+
+        'Check if any individual events have been added
+        If IEventCount <> 0 Then
+            'Adds individual events to listbox
+            For i = 0 To IEventCount - 1
+                lstEventsSoFar.Items.Add(IEvent(i).EName & " Ind")
+            Next
+        End If
+        If TEventCount <> 0 Then
+            For i = 0 To TEventCount - 1
+                lstEventsSoFar.Items.Add(TEvent(i).EName & " Team")
+            Next
+        End If
+        If indCount <> 0 Then
+            'Adds individuals to listbox
+            For i = 0 To indCount - 1
+                lstParticipants.Items.Add(ind(i).iName & " Ind")
+            Next
+        End If
+        If teamCount <> 0 Then
+            For i = 0 To teamCount - 1
+                lstParticipants.Items.Add(team(i).TName & " Team")
+            Next
+        End If
+
+    End Sub
